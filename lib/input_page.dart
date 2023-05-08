@@ -31,13 +31,10 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("BMI CALCULATOR"),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-
+        appBar: AppBar(
+          title: Text("BMI CALCULATOR"),
+        ),
+        body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           // Genter
 
           Expanded(
@@ -220,7 +217,7 @@ class _InputPageState extends State<InputPage> {
                                   });
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               RoundIconButton(
@@ -244,24 +241,15 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
 
-          //calculate button
-
-          BottomButton('CALCULATE',
-
-              (){
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (context) => Result()));
-              })
-
-        ],
-      ),
-    );
+          BottomButton(
+              buttonName: 'CALCULATE',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Result()));
+              }),
+        ]));
   }
 }
-
-
 
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
