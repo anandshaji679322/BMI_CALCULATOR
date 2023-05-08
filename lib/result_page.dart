@@ -52,10 +52,11 @@ class Result extends StatelessWidget {
                 ),
               ),
             ),
-            BottomButton("RE-CALCULATE", () {
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => Result()));
-            })
+            BottomButton(
+                buttonName: "RE-CALCULATE",
+                onTap: () {
+                  Navigator.pop(context);
+                })
           ],
         ));
   }
